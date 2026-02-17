@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Masonry Layout */
+.gallery {
+  column-count: 4;
+  column-gap: 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 15px;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* Hover Effect */
+.item:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.85);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
